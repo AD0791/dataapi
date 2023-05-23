@@ -36,6 +36,7 @@ async def datim():
     DATIM_SCHEMA = run_datim()
     if DATIM_SCHEMA:
         json_datim = dumps(DATIM_SCHEMA, cls=NumpyEncoder).encode('utf-8')
+        # json_datim = dumps(DATIM_SCHEMA).encode('utf-8')
         return Response(media_type="application/json", content=json_datim)
     raise HTTPException(status.HTTP_404_NOT_FOUND, "Something went wrong")
 
@@ -107,5 +108,6 @@ async def vital_info():
     VITAL_SCHEMA = run_vital_info()
     if VITAL_SCHEMA:
         json_datim = dumps(VITAL_SCHEMA, cls=NumpyEncoder).encode('utf-8')
+        # json_datim = dumps(VITAL_SCHEMA).encode('utf-8')
         return Response(media_type="application/json", content=json_datim)
     raise HTTPException(status.HTTP_404_NOT_FOUND, "Something went wrong")

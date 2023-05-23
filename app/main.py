@@ -6,7 +6,7 @@ from .core import (
 )
 # from .config import create_celery
 
-from .routers import  muso_router
+from .routers import muso_router
 from .routers import cases_router
 from .routers import ptme_router
 from .routers import dreams_router
@@ -19,11 +19,11 @@ app = FastAPI(
     title=settings.project_title,
     description=settings.project_description,
     version=settings.project_version,
-    #docs_url=settings.project_docs_url
+    # docs_url=settings.project_docs_url
 )
 
 
-origins=[
+origins = [
     "*"
 ]
 
@@ -35,7 +35,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# celery = create_celery() #TODO celery function is not yet implemented
+# celery = create_celery()
 
 
 app.include_router(eid_router)
